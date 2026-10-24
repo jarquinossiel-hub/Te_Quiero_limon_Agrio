@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion de inventario</title>
+</head>
+<body>
+    <aside>
+        <h1>Gestion de inventario</h1>
+        <nav>
+            <li><button class="nav-btn active" showModule('inicio', 'this')> inicio</button></li>
+            <li><button class="nav-btn" showModule('cliente', 'this')>Cliente</button></li>
+            <li><button class="nav-btn" showModule('inventario', 'this')>Inventario</button></li>
+            <li><button class="nav-btn" showModule('venta', 'this')>Venta</button></li>
+        </nav>
+              
+    </aside>
+            <main>
+                <header>
+                    <h1 id="page-title">Panel de control</h1>
+                </header>
+
+                <section>
+                    <section id="inicio" class="module active">
+                <div class="cards">
+                  <div class="card">
+                    <h3>Ventas Totales (Mes)</h3>
+                    <p>C$99,750.00</p>
+                  </div>
+                  <div class="card">
+                    <h3>Productos Registrados</h3>
+                    <p>50 Articulos</p>
+                  </div>
+                  <div class="card">
+                    <h3>Ordenes Procesadas</h3>
+                    <p>499 Venta(s)</p>
+                  </div>
+                </div>
+                <div class="content-box">
+                  <h3>Últimas Transacciones</h3>
+                </div>
+              </section>
+                 <section id="cliente" class="module">
+                  <ul>
+                      <li>Carlos Mendoza</li>
+                      <li>Ana Gutiérrez</li>
+                      <li>Roberto Gómez</li>
+                      <li>Mario Gónzales</li>
+                      <li>Karla Gómez</li>
+                      <li>Jose Fletes</li>
+                      <li>Katerin Puerto</li>
+                      <li>Manuel Rocha</li>
+                      <li>Carlos Mendez</li> 
+                      <li>Jose Jose</li>
+                  </ul>
+                  </section>
+
+                  <section id="inventario" class="module">
+                    <div class="content-box">
+                      <h3>Agregar Nuevo Producto</h3>
+                      <form onsubmit="event.preventDefault(); alert('Producto guardado correctamente');">
+                        <div class="form-group">
+                          <input type="text" placeholder="Código (ej. 005)" required>
+                          <input type="text" placeholder="Nombre del Producto" required>
+                          <input type="number" placeholder="Precio ($)" step="0.01" required>
+                          <input type="number" placeholder="Stock Inicial" required>
+                        </div>
+                        <button type="submit" class="btn">Guardar Producto</button>
+                      </form>
+                    </div>
+
+                    <div class="content-box">
+                      <h3>Catálogo de Productos</h3>
+                      <table>
+                        <thead>
+                          <tr><th>Código</th><th>Producto</th><th>Precio Unitario</th><th>Stock Disponible</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>001</td><td>Taladro Percutor 1/2"</td><td>$2,500.00</td><td>8 unidades</td></tr>
+                          <tr><td>002</td><td>Martillo de Uña 16oz</td><td>$350.00</td><td>15 unidades</td></tr>
+                          <tr><td>003</td><td>Juego de Destornilladores (6 pzas)</td><td>$480.00</td><td>22 unidades</td></tr>
+                          <tr><td>004</td><td>Sierra Circular 7-1/4"</td><td>$3,100.00</td><td>5 unidades</td></tr>
+                          <tr><td>005</td><td>Amoladora Angular 4-1/2" 750W</td><td>C$ 1,850.00</td><td>12 unidades</td></tr>
+                          <tr><td>006</td><td>Juego de Llaves Combinadas (12 pzas)</td><td>C$ 950.00</td><td>18 unidades</td></tr>
+                          <tr><td>007</td><td>Cinta Métrica 5m / 16ft Impacto</td><td>C$ 180.00</td><td>45 unidades</td></tr>
+                          <tr><td>008</td><td>Nivel de Burbuja Profesional 24"</td><td>C$ 420.00</td><td>10 unidades</td></tr>
+                          <tr><td>009</td><td>Escalera de Aluminio 6 Peldaños</td><td>C$ 3,200.00</td><td>6 unidades</td></tr>
+                          <tr><td>010</td><td>Juego de Brocas para Concreto (5 pzas)</td><td>C$ 280.00</td><td>30 unidades</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </section>
+
+                <section id="Ventas" class="module">
+                 <table>
+                    <thead>
+                      <tr><th>ID Venta</th><th>Cliente</th><th>Total</th><th>Fecha</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>001</td><td>Carlos Mendoza</td><td>C$500.00</td><td>2023-10-01</td></tr>
+                      <tr><td>002</td><td>Ana Gutiérrez</td><td>C$350.00</td><td>2023-10-02</td></tr>
+                      <tr><td>003</td><td>Roberto Gómez</td><td>C$1,700.00</td><td>2023-10-03</td></tr>
+                      <tr><td>004</td><td>Mario Gónzales</td><td>C$10,200.00</td><td>2023-10-04</td></tr>
+                      <tr><td>005</td><td>Karla Gómez</td><td>C$25,200.00</td><td>2023-10-05</td></tr>
+                      <tr><td>006</td><td>Jose Fletes</td><td>C$1,000.00</td><td>2023-10-06</td></tr>
+                      <tr><td>007</td><td>Katerin Puerto</td><td>C$1,200.00</td><td>2023-10-07</td></tr>
+                      <tr><td>008</td><td>Manuel Rocha </td><td>C$200.00</td><td>2023-10-08</td></tr>
+                      <tr><td>009</td><td>Carlos Mendez </td><td>C$25,350.00</td><td>2023-10-09</td></tr>
+                      <tr><td>010</td><td>Jose Jose </td><td>C$15,200.00</td><td>2023-10-10</td></tr>
+                    </tbody>
+                  </table>
+                </section>
+              
+            </main>
+          <script src="script.js"></script>
+</body>
+</html>
